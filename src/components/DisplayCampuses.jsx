@@ -1,4 +1,4 @@
-const displayList = (props) =>{
+const DisplayList = (props) =>{
     return(
         <div>
             {props.list.map(data=>{
@@ -12,4 +12,4 @@ const displayList = (props) =>{
         </div>
     )
 }
-export default displayList;
+export default DisplayList;

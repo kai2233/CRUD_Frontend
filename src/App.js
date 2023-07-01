@@ -11,11 +11,10 @@ function App() {
         <Link to="/">Home</Link><br/>
         <Link to="/allCampuses">Campuses</Link><br/>
         <Link to="/allStudents">Students</Link><br/>
-        <Link to="/singleCampus">Single Campus</Link><br/>
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/allCampuses" element={<Campuses />} />
-        <Route path="/allStudents" element={<Students />} />
+        <Route exact path="/" element={<Homepage />} />
+        <Route exact path="/allCampuses/*" element={<Campuses />} />
+        <Route exact path="/allStudents" element={<Students />} />
         <Route path="/singleCampus" element={<SingleCampus/>} />
       </Routes>
     </Router>

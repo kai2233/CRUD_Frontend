@@ -17,11 +17,8 @@ const Campuses = () => {
       <h1>Hi! this is campuses page</h1>
       {/* <Link to ="/singleCampus">Single Campus</Link><br/> */}
       {allCampus.length!==0?(<DisplayCampuses list= {allCampus}/>):(<h3>There are no campuses registered in the database</h3>)}
-      {/* <Routes>
-        <Route path="/singleCampus" element={SingleCampus} />
-      </Routes> */}
     </div>
   );
 };
 
-export default Campuses
+export default Campuses;

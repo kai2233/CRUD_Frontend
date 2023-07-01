@@ -1,14 +1,19 @@
 import React, {useEffect} from "react";
 import {useSelector,useDispatch} from "react-redux";
 import {fetchSingleCampusThunk} from "../redux/campuses/campuses.action";
-import DisplaySingleCampus from "../components/DisplaySingleCampus"
+import DisplaySingleCampus from "../components/DisplaySingleCampus";
+import { useLocation } from "react-router-dom";
 
-const SingleCampus = (props) => {
+const SingleCampus = () => {
+    const location = useLocation();
+    console.log(location);
+    const campID = location.state.campID;
+    console.log(campID);
     const Campus = useSelector(state => state.campuses.singleCampus);
     const dispatch = useDispatch();
     useEffect(() => {
         // const findCampus = () => {
-            dispatch(fetchSingleCampusThunk(2));
+            dispatch(fetchSingleCampusThunk(campID));
         // };
         // findCampus();
     }, []);
@@ -21,4 +26,4 @@ const SingleCampus = (props) => {
     )
 }
 
-export default SingleCampus
+export default SingleCampus;

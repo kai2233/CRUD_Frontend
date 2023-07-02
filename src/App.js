@@ -12,7 +12,6 @@ function App() {
         <Link to="/">Home</Link><br/>
         <Link to="/allCampuses">Campuses</Link><br/>
         <Link to="/allStudents">Students</Link><br/>
-        <Link to="/addCampus">Add Campus</Link>
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route exact path="/allCampuses/*" element={<Campuses />} />

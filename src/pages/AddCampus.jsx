@@ -33,7 +33,6 @@ const AddCampus = () => {
                 <input type="text" value={imageUrl} placeholder="url..." onChange={(e) => setImageUrl(e.target.value)}/><br/>
                 <label>Description </label>
                 <input type="text" value={description} placeholder="description..." onChange={(e) => setDescription(e.target.value)}/><br/>
-                {/* <button type="submit" onClick={addNewCampus}>Submit</button> */}
                 <input type="submit"/>
             </form>
             {newCampus.name===name?(<h1>created successfully</h1>):(null)}

@@ -15,6 +15,12 @@ export const fetchSingleCampuses = (payload) => {
   };
 };
 
+export const addNewCampus = (payload) => {
+  return {
+    type: campusesActionType.ADD_NEW_CAMPUS,
+    payload: payload
+  }
+};
 
 export const fetchAllCampusesThunk = () => {
     return async (dispatch) => {
@@ -42,3 +48,17 @@ export const fetchSingleCampusThunk = (id) => {
     }
   };
 };
+
+export const addNewCampusThunk = (newCampus) => {
+  return async (dispatch) => {
+    try {
+      console.log("addNewCampusThunk started");
+      const result = await axios.post("http://localhost:8080/api/campuses/addCampus", newCampus);
+      console.log(result)
+      console.log("addNewCampusThunk COMPLETED")
+      dispatch(addNewCampus(result.data));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+}

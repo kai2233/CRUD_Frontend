@@ -3,6 +3,7 @@ import campusesActionType from './campuses.types';
 export const INITIAL_CAMPUSES_STATE = {
   allCampuses: [],
   singleCampus: [],
+  newCampus: [],
 };
 
 const campusesReducer = (state = INITIAL_CAMPUSES_STATE, { type, payload }) => {
@@ -11,7 +12,9 @@ const campusesReducer = (state = INITIAL_CAMPUSES_STATE, { type, payload }) => {
     case campusesActionType.FETCH_ALL_CAMPUSES:
       return { ...state, allCampuses: payload };
     case campusesActionType.FETCH_SINGLE_CAMPUS:
-      return{...state, singleCampus: payload }
+      return{...state, singleCampus: payload };
+    case campusesActionType.ADD_NEW_CAMPUS:
+      return {...state, newCampus: payload };
     default:
       return state;
   }

@@ -7,13 +7,15 @@ const AddCampus = () => {
     const [address, setAddress] = useState("");
     const [description, setDescription] = useState("");
     const dispatch = useDispatch();
-    const addNewCampus = () => {
+    const addNewCampus = (e) => {
+        e.preventDefault();
         const campus = {
             name,
             imageUrl,
             address,
             description,
         };
+        console.log(campus);
     };
     return (
         <div>

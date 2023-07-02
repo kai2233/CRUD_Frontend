@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addNewCampusThunk } from "../redux/campuses/campuses.action";
+import { Link } from "react-router-dom";
 
 const AddCampus = () => {
+    const newCampus = useSelector((state) => state.campuses.newCampus);
+    const dispatch = useDispatch();
     const [name, setName] = useState("");
-    const [imageUrl, setImageUrl] = useState("");
+    const [imageUrl, setImageUrl] = useState();
     const [address, setAddress] = useState("");
     const [description, setDescription] = useState("");
-    const dispatch = useDispatch();
     const addNewCampus = (e) => {
         e.preventDefault();
         const campus = {
@@ -16,6 +19,7 @@ const AddCampus = () => {
             description,
         };
         console.log(campus);
+        name!==''&&address!==''?(dispatch(addNewCampusThunk(campus))):( <h1>NAME OR ADDRESS IS EMPTY</h1>);
     };
     return (
         <div>
@@ -30,6 +34,7 @@ const AddCampus = () => {
                 <label>Description</label>
                 <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
                 <button type="submit" onClick={addNewCampus}>Submit</button>
+                {console.log(newCampus)}
             </form>
         </div>
     )

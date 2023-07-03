@@ -8,7 +8,8 @@ const DisplaySingleCampus = () => {
             <h1>{Campus[0].name}</h1>
             <h2>{Campus[0].address}</h2>
             <h3>{Campus[0].description}</h3>
-            {Campus[0].students.map(data => {
+            {Campus[0].students.length!==0?
+            (Campus[0].students.map(data => {
                 return (
                     <div key={data.id}>
                         <img src={data.imageUrl} />
@@ -17,7 +18,9 @@ const DisplaySingleCampus = () => {
                         </Link>
                     </div>
                 )
-            })}
+            })):
+            (<h3>No students enrrolled in this campus</h3>)
+            }
         </div>
     )
 }

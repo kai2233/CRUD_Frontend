@@ -30,7 +30,7 @@ const AddCampus = () => {
                 <label>Address </label>
                 <input type="text" required value={address} placeholder="address..."onChange={(e) => setAddress(e.target.value)}/><br/>
                 <label>Image Url </label>
-                <input type="text" value={imageUrl} placeholder="url..." onChange={(e) => setImageUrl(e.target.value)}/><br/>
+                <input type="text"  placeholder="url..." onChange={(e) => setImageUrl(e.target.value)}/><br/>
                 <label>Description </label>
                 <input type="text" value={description} placeholder="description..." onChange={(e) => setDescription(e.target.value)}/><br/>
                 <input type="submit"/>

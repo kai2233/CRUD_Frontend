@@ -35,7 +35,7 @@ const AddCampus = () => {
                 <input type="text" value={description} placeholder="description..." onChange={(e) => setDescription(e.target.value)}/><br/>
                 <input type="submit"/>
             </form>
-            {newCampus.name===name?(<h1>created successfully</h1>):(null)}
+            {newCampus.name===name?(<h1>Created Successfully</h1>):(null)}
         </div>
     )
 }

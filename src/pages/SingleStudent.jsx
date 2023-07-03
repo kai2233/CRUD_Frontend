@@ -1,7 +1,18 @@
+import React, {useEffect} from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { fetchSingleStudentThunk } from "../redux/students/students.action";
+import DisplaySingleStudent from "../components/DisplaySingleStudent";
+
 const SingleStudent = () => {
+    const student = useSelector((state) => state.students.singleStudent);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchSingleStudentThunk(11));
+    }, []);
     return (
         <div>
             <h1>Hi this is Single Student page</h1>
+            {student.length!== 0? (<DisplaySingleStudent/>) : (<h2>unchaught error</h2>)}
         </div>
     )
 };

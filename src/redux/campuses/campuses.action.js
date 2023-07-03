@@ -22,6 +22,13 @@ export const addNewCampus = (payload) => {
   }
 };
 
+export const deleteCampus = (payload) => {
+  return {
+      type: campusesActionType.DELETE_CAMPUS,
+      payload: payload
+    }
+};
+
 export const fetchAllCampusesThunk = () => {
     return async (dispatch) => {
       try {
@@ -57,6 +64,20 @@ export const addNewCampusThunk = (newCampus) => {
       console.log(result)
       console.log("addNewCampusThunk COMPLETED")
       dispatch(addNewCampus(result.data));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+}
+
+export const deleteCampusThunk = (ID) => {
+  return async (dispatch) => {
+    try {
+      console.log("deleteCampusThunk started");
+      const result = await axios.delete("http://localhost:8080/api/campuses/deleteCampus/"+ID);
+      console.log(result)
+      console.log("deleteCampusThunk COMPLETED")
+      dispatch(deleteCampus(result.data));
     } catch (err) {
       console.error(err);
     }

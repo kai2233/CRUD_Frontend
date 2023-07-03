@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {useSelector,useDispatch} from "react-redux";
-import {fetchSingleCampusThunk} from "../redux/campuses/campuses.action";
-import DisplaySingleCampus from "../components/DisplaySingleCampus";
+import {fetchSingleCampusThunk} from "../../redux/campuses/campuses.action";
+import DisplaySingleCampus from "../../components/DisplaySingleCampus";
 import { useLocation } from "react-router-dom";
 
 const SingleCampus = () => {

@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 // Pages
 import Homepage from "./pages/Homepage";
-import Campuses from "./pages/Campuses";
-import Students from "./pages/Students";
-import SingleCampus from "./pages/SingleCampus";
-import AddCampus from "./pages/AddCampus";
-import SingleStudent from "./pages/SingleStudent"
-import AddStudent from "./pages/AddStudent";
+import Campuses from "./pages/campusesPages/Campuses";
+import Students from "./pages/studentsPages/Students";
+import SingleCampus from "./pages/campusesPages/SingleCampus";
+import AddCampus from "./pages/campusesPages/AddCampus";
+import SingleStudent from "./pages/studentsPages/SingleStudent"
+import AddStudent from "./pages/studentsPages/AddStudent";
 function App() {
   return (
     <Router>

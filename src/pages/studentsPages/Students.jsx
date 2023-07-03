@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchAllStudentsThunk} from "../redux/students/students.action";
-import DisplayStudents from "../components/DisplayStudents";
+import { fetchAllStudentsThunk} from "../../redux/students/students.action";
+import DisplayStudents from "../../components/DisplayStudents";
 import { Link } from "react-router-dom";
 const Students = () => {
 

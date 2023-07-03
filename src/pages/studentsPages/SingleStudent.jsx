@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import { useSelector,useDispatch } from "react-redux";
-import { fetchSingleStudentThunk } from "../redux/students/students.action";
-import DisplaySingleStudent from "../components/DisplaySingleStudent";
+import { fetchSingleStudentThunk } from "../../redux/students/students.action";
+import DisplaySingleStudent from "../../components/DisplaySingleStudent";
 import {useLocation} from "react-router-dom";
 
 const SingleStudent = () => {

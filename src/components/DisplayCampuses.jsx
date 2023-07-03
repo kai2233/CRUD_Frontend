@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import {useSelector,useDispatch} from "react-redux";
 import {deleteCampusThunk} from "../redux/campuses/campuses.action"
-const DisplayList = (props) =>{
-    // const allCampus = useSelector((state) => state.campuses.allCampuses);
+const DisplayList = () =>{
+    const allCampus = useSelector((state) => state.campuses.allCampuses);
     const dispatch = useDispatch();
 
     const deleteCampus = (id) =>{
@@ -11,11 +11,10 @@ const DisplayList = (props) =>{
     }
     return(
         <div>
-            {props.list.map(data=>{
+            {allCampus.map(data=>{
                 return(
                     <div key = {data.id}>
                         <img src = {data.imageUrl}/>
-                        {/* <h1>{data.name}</h1> */}
                         <Link to="/singleCampus" state={{ campID:data.id }}>
                             {data.name}
                         </Link>

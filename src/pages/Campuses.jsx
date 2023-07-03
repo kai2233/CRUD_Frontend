@@ -16,7 +16,7 @@ const Campuses = () => {
       <h1>Hi! this is campuses page</h1>
       {/* <Link to ="/singleCampus">Single Campus</Link><br/> */}
       <Link to = "/addCampus"><button type="button">click to add campus</button></Link>
-      {allCampus.length!==0?(<DisplayCampuses list= {allCampus}/>):(<h3>There are no campuses registered in the database</h3>)}
+      {allCampus.length!==0?(<DisplayCampuses/>):(<h3>There are no campuses registered in the database</h3>)}
     </div>
   );
 };

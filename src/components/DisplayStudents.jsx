@@ -1,4 +1,5 @@
 import {useSelector,useDispatch} from "react-redux";
+import {Link} from "react-router-dom";
 const DisplayStudents = () =>{
     const allStudents = useSelector((state) => state.students.allStudents);
 
@@ -8,7 +9,7 @@ const DisplayStudents = () =>{
                 return(
                     <div key = {data.id}>
                         <img src = {data.imageUrl}/>
-                        <h1>{data.firstName} {data.lastName}</h1>
+                        <Link to = "/singleStudent" state ={{studentId:data.id}}>{data.firstName} {data.lastName}</Link>
                     </div>
                 )
             })}  

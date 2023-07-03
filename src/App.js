@@ -6,6 +6,7 @@ import Campuses from "./pages/Campuses";
 import Students from "./pages/Students";
 import SingleCampus from "./pages/SingleCampus";
 import AddCampus from "./pages/AddCampus";
+import SingleStudent from "./pages/SingleStudent"
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/allStudents" element={<Students />} />
         <Route exact path="/singleCampus" element={<SingleCampus/>} />
         <Route exact path="/addCampus" element={<AddCampus />} />
+        <Route exact path="/singleStudent" element={<SingleStudent/>} />
       </Routes>
     </Router>
   );

@@ -29,6 +29,13 @@ export const deleteCampus = (payload) => {
     }
 };
 
+export const updateCampus = (payload) => {
+  return {
+    type: campusesActionType.UPDATE_CAMPUS,
+    payload: payload
+  }
+};
+
 export const fetchAllCampusesThunk = () => {
     return async (dispatch) => {
       try {
@@ -82,4 +89,18 @@ export const deleteCampusThunk = (ID) => {
       console.error(err);
     }
   };
-}
+};
+
+export const updateCampusThunk = (updatedCampus) => {
+  return async (dispatch) => {
+    try {
+      console.log("updateCampusThunk started");
+      const result = await axios.put("http://localhost:8080/api/campuses/updateCampus",updatedCampus);
+      console.log(result)
+      console.log("updateCampusThunk COMPLETED")
+      dispatch(updateCampus(result.data));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+};

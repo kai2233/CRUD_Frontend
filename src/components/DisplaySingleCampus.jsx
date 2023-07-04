@@ -63,7 +63,7 @@ const DisplaySingleCampus = () => {
                 </select><br/>
                 <button onClick = {AddStudent}>Add</button>
             </div>
-            {/* displays the students that are enrrolled in current campus, dispalys a message if no students are shown */}
+            {/* displays the students that are enrolled in current campus, dispalys a message if no students are shown */}
             {Campus[0].students.length!==0?
             (Campus[0].students.map(data => {
                 return (
@@ -76,7 +76,7 @@ const DisplaySingleCampus = () => {
                     </div>
                 )
             })):
-            (<h3>No students enrrolled in this campus</h3>)
+            (<h3>No students enrolled in this campus</h3>)
             }
         </div>
     )

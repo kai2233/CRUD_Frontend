@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCampusThunk } from "../../redux/campuses/campuses.action";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 
 const EditCampus = () => {
     const location = useLocation();
-    const campID = location.state.campID;
+    const targetCampID = location.state.campID;
     const dispatch = useDispatch();
     const [name, setName] = useState();
     const [imageUrl, setImageUrl] = useState();
@@ -15,7 +15,7 @@ const EditCampus = () => {
     const AlterCampus = (e) => {
         e.preventDefault();
         const changedValue = {
-            id:campID,
+            id:targetCampID,
             name,
             imageUrl,
             address,
@@ -24,7 +24,7 @@ const EditCampus = () => {
         console.log(changedValue);
         dispatch(updateCampusThunk(changedValue));
     };
-    const targetCampus = useSelector((state) => state.campuses.updatedCampus);
+    // const targetCampus = useSelector((state) => state.campuses.updatedCampus);
     return (
         <div>
             <h1>Hi! this is Edit Campus page</h1>
@@ -39,7 +39,8 @@ const EditCampus = () => {
                 <input type="text"  placeholder="description..." onChange={(e) => setDescription(e.target.value)}/><br/>
                 <input type="submit"/>
             </form>
-            {targetCampus.id===campID?(<h1>Edited Successfully</h1>):(null)}
+            {/* {targetCampus.id===campID?(<h1>Edited Successfully</h1>):(null)} */}
+            <Link to="/singleCampus" state={{ campID:targetCampID }}> <button>Go Back</button></Link>
         </div>
     )
 }

@@ -1,10 +1,16 @@
-import {useSelector} from "react-redux";
+import {useSelector,useDispatch} from "react-redux";
 import { Link } from "react-router-dom";
+import { deleteStudentThunk } from "../redux/students/students.action";
 const DisplaySingleStudent = () => {
     const student = useSelector((state) => state.students.singleStudent);
+    const dispatch = useDispatch();
+    const deleteStudent = (id) => {
+        dispatch(deleteStudentThunk(id));
+    }
     return (
         <div>
             <img src= {student[0].imageUrl} alt={"error"}/>
+            <Link to = "/allStudents" ><button onClick = {()=>deleteStudent(student[0].id)}>X</button></Link>
             <Link to = "/editStudent" state ={{studentId:student[0].id}}>Edit</Link>
             <h1>Name: {student[0].firstName} {student[0].lastName}</h1>
             <h2>Email: {student[0].email}</h2>

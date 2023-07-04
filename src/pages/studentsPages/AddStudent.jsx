@@ -28,15 +28,15 @@ const AddStudent = () => {
             <h1>Hi! this is Add Student page</h1>
             <form onSubmit = {addNewStudent}>
                 <label>First Name</label>
-                <input type="text" required value={firstName} onChange={(e) => setFirstName(e.target.value)}/><br/>
+                <input type="text" placeholder = "First Name..." required value={firstName} onChange={(e) => setFirstName(e.target.value)}/><br/>
                 <label>Last Name</label>
-                <input type="text" required value={lastName} onChange={(e) => setLastName(e.target.value)}/><br/>
+                <input type="text" placeholder = "Last Name..." required value={lastName} onChange={(e) => setLastName(e.target.value)}/><br/>
                 <label>Email</label>
-                <input type="text" required value={email} onChange={(e) => setEmail(e.target.value)}/><br/>
+                <input type="text" placeholder = "Email..." required value={email} onChange={(e) => setEmail(e.target.value)}/><br/>
                 <label>GPA</label>
-                <input type="text" value={gpa} onChange={(e) => setGpa(e.target.value)}/><br/>
+                <input type="number" min="0" max="4" step = "0.01" placeholder = "GPA" onChange={(e) => setGpa(e.target.value)}/><br/>
                 <label>Image</label>
-                <input type="text"  onChange={(e) => setImageUrl(e.target.value)}/><br/>
+                <input type="text" placeholder = "Image Url..." onChange={(e) => setImageUrl(e.target.value)}/><br/>
                 <input type="submit" value="Submit"/>
             </form>
             {newStudent.firstName === firstName && newStudent.lastName === lastName?

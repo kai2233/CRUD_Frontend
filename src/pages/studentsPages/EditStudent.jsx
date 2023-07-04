@@ -38,7 +38,7 @@ const EditStudent = () => {
                 <label>Email</label>
                 <input type="text"  placeholder = "Email..." onChange={(e) => setEmail(e.target.value)}/><br/>
                 <label>GPA</label>
-                <input type="text"  placeholder = "GPA" onChange={(e) => setGpa(e.target.value)}/><br/>
+                <input type="number" min="0" max="4" step = "0.01" placeholder = "GPA" onChange={(e) => setGpa(e.target.value)}/><br/>
                 <label>Image</label>
                 <input type="text"  placeholder = "Image Url..." onChange={(e) => setImageUrl(e.target.value)}/><br/>
                 <input type="submit" value="Submit"/>

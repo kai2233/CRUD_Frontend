@@ -11,7 +11,7 @@ const DisplaySingleCampus = () => {
         <div >
             <img src={Campus[0].imageUrl} />
             <Link to = "/allCampuses" ><button onClick = {() =>deleteCampus(Campus[0].id)}>X</button></Link>
-            <Link to = "/editCampus" state = {{campID: Campus[0].id}} >Edit</Link>
+            <Link to = "/editCampus" state = {{campID: Campus[0].id}}><button>Edit</button></Link>
             <h1>{Campus[0].name}</h1>
             <h2>{Campus[0].address}</h2>
             <h3>{Campus[0].description}</h3>

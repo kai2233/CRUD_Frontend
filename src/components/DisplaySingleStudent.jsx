@@ -33,7 +33,7 @@ const DisplaySingleStudent = () => {
             {/* delete feature that will remove the student from the database */}
             <Link to = "/allStudents" ><button onClick = {()=>deleteStudent(student[0].id)}>X</button></Link>
             {/* edit feature that can able the user to alter student's information */}
-            <Link to = "/editStudent" state ={{studentId:student[0].id}}>Edit</Link>
+            <Link to = "/editStudent" state ={{studentId:student[0].id}}><button>Edit</button></Link>
             {/* display student information */}
             <h1>Name: {student[0].firstName} {student[0].lastName}</h1>
             <h2>Email: {student[0].email}</h2>

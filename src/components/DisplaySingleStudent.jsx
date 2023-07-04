@@ -47,7 +47,7 @@ const DisplaySingleStudent = () => {
                         return (<option key={data.id} value={data.id}>{data.name}</option>)
                     })};
                 </select><br/>
-                <button onClick = {changeCampus}>Change</button>
+                <button onClick = {changeCampus}>Change/Enroll</button>
             </div>
             {/* diplay a message if no enrrolled campus is shown */}
             {student[0].campusId!==null?(<h2>{student[0].campus.name}</h2>):(<h4>THIS STUDENT DIDN'T ENROLL IN ANY CAMPUS</h4>)}

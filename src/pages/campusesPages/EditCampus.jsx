@@ -39,7 +39,7 @@ const EditCampus = () => {
                 <input type="text"  placeholder="description..." onChange={(e) => setDescription(e.target.value)}/><br/>
                 <input type="submit"/>
             </form>
-            {targetCampus.id===campID?(<h1>Created Successfully</h1>):(null)}
+            {targetCampus.id===campID?(<h1>Edited Successfully</h1>):(null)}
         </div>
     )
 }

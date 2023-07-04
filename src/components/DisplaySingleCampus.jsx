@@ -17,12 +17,12 @@ const DisplaySingleCampus = () => {
     // Initializes the state of allStudents for drop-down menu selection if allStudents has not been initialized yet.    
     if(allStudents.length === 0){
         dispatch(fetchAllStudentsThunk());
-    }
+    };
 
     //delete the campus from database based on the campus id
     const deleteCampus = (id) =>{
         dispatch(deleteCampusThunk(id))
-    }
+    };
 
     // update the campusid of target student to the id of current campus
     const AddStudent = () =>{
@@ -32,7 +32,16 @@ const DisplaySingleCampus = () => {
         }
         dispatch(updateStudentThunk(targetStudent));
         window.location.reload(false);
-    }
+    };
+
+    const removeStudent = (targetId) =>{
+        const targetStudent= {
+            id: targetId,
+            campusId: null
+        }
+        dispatch(updateStudentThunk(targetStudent));
+        window.location.reload(false);
+    };
     return (
         <div >
             <img src={Campus[0].imageUrl} />
@@ -63,6 +72,7 @@ const DisplaySingleCampus = () => {
                         <Link to="/singleStudent" state={{ studentId: data.id }}>
                             {data.firstName} {data.lastName}
                         </Link>
+                        <button onClick = {() => removeStudent(data.id)}>Remove</button>
                     </div>
                 )
             })):

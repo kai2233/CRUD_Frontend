@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 
 const EditCampus = () => {
     const location = useLocation();
-    // const campID = location.state.campID;
+    const campID = location.state.campID;
     const dispatch = useDispatch();
     const [name, setName] = useState();
     const [imageUrl, setImageUrl] = useState();
@@ -15,7 +15,7 @@ const EditCampus = () => {
     const AlterCampus = (e) => {
         e.preventDefault();
         const changedValue = {
-            id:1,
+            id:campID,
             name,
             imageUrl,
             address,
@@ -39,7 +39,7 @@ const EditCampus = () => {
                 <input type="text"  placeholder="description..." onChange={(e) => setDescription(e.target.value)}/><br/>
                 <input type="submit"/>
             </form>
-            {targetCampus.id===1?(<h1>Created Successfully</h1>):(null)}
+            {targetCampus.id===campID?(<h1>Created Successfully</h1>):(null)}
         </div>
     )
 }

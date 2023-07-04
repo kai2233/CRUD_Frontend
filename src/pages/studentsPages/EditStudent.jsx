@@ -11,7 +11,7 @@ const EditStudent = () => {
     const [firstName, setFirstName] = useState();
     const [lastName, setLastName] = useState();
     const [email, setEmail] = useState();
-    const [gpa, setGpa] = useState(0);
+    const [gpa, setGpa] = useState();
     const [imageUrl, setImageUrl] = useState();
     const AlterStudent = (e) => {
         e.preventDefault();

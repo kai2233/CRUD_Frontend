@@ -1,9 +1,11 @@
 import {useSelector} from "react-redux";
+import { Link } from "react-router-dom";
 const DisplaySingleStudent = () => {
     const student = useSelector((state) => state.students.singleStudent);
     return (
         <div>
             <img src= {student[0].imageUrl} alt={"error"}/>
+            <Link to = "/editStudent" state ={{studentId:student[0].id}}>Edit</Link>
             <h1>Name: {student[0].firstName} {student[0].lastName}</h1>
             <h2>Email: {student[0].email}</h2>
             <h3>gpa: {student[0].gpa}</h3>

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateStudentThunk } from "../../redux/students/students.action";
-import { useLocation } from "react-router-dom";
+import { useLocation,Link } from "react-router-dom";
 
 
 const EditStudent = () => {
     const location = useLocation();
-    const studentId = location.state.studentId;
+    const targetStudentId = location.state.studentId;
     const dispatch = useDispatch();
     const [firstName, setFirstName] = useState();
     const [lastName, setLastName] = useState();
@@ -16,7 +16,7 @@ const EditStudent = () => {
     const AlterStudent = (e) => {
         e.preventDefault();
         const changedValue = {
-            id:studentId,
+            id:targetStudentId,
             firstName,
             lastName,
             email,
@@ -26,7 +26,7 @@ const EditStudent = () => {
         console.log(changedValue);
         dispatch(updateStudentThunk(changedValue));
     };
-    const targetStudent = useSelector((state) => state.students.updatedStudent);
+    // const targetStudent = useSelector((state) => state.students.updatedStudent);
     return (
         <div>
             <h1>Hi! this is edit Student page</h1>
@@ -43,7 +43,8 @@ const EditStudent = () => {
                 <input type="text"  placeholder = "Image Url..." onChange={(e) => setImageUrl(e.target.value)}/><br/>
                 <input type="submit" value="Submit"/>
             </form>
-            {targetStudent.id===studentId?(<h1>Edited Successfully</h1>):(null)}
+            {/* {targetStudent.id===targetStudentId?(<h1>Edited Successfully</h1>):(null)} */}
+            <Link to="/singleStudent" state ={{studentId:targetStudentId}}><button>Go Back</button></Link>
         </div>
     )
 }

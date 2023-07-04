@@ -4,6 +4,7 @@ export const INITIAL_STUDENTS_STATE = {
     allStudents: [],
     singleStudent: [],
     newStudent:[],
+    updatedStudent:[]
 };
 
 const studentsReducer = (state = INITIAL_STUDENTS_STATE, {type,payload}) => {
@@ -17,6 +18,8 @@ const studentsReducer = (state = INITIAL_STUDENTS_STATE, {type,payload}) => {
             return {...state,newStudent: payload};
         case studentsActionType.DELETE_STUDENT:
             return {...state,allStudents: payload};
+        case studentsActionType.UPDATE_STUDENT:
+            return {...state,updatedStudent: payload};
         default:
             return state;
     }

@@ -1,10 +1,17 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch} from "react-redux";
 import { Link } from "react-router-dom";
+import {deleteCampusThunk} from "../redux/campuses/campuses.action"
 const DisplaySingleCampus = () => {
     const Campus = useSelector(state => state.campuses.singleCampus);
+    const dispatch = useDispatch();
+    const deleteCampus = (id) =>{
+        dispatch(deleteCampusThunk(id))
+        alert("campus deleted");
+    }
     return (
         <div >
             <img src={Campus[0].imageUrl} />
+            <button onClick = {() =>deleteCampus(Campus[0].id)}>X</button>
             <Link to = "/editCampus" state = {{campID: Campus[0].id}} >Edit</Link>
             <h1>{Campus[0].name}</h1>
             <h2>{Campus[0].address}</h2>

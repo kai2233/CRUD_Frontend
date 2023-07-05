@@ -13,9 +13,11 @@ import EditStudent from "./pages/studentsPages/EditStudent";
 function App() {
   return (
     <Router>
-        <Link to="/">Home</Link><br/>
-        <Link to="/allCampuses">Campuses</Link><br/>
-        <Link to="/allStudents">Students</Link><br/>
+      <ul>
+        <li><Link to="/allCampuses">Campuses</Link></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/allStudents">Students</Link></li>
+      </ul>
       <Routes>
         <Route exact path="/" element={<Homepage />} />
         <Route exact path="/allCampuses/*" element={<Campuses />} />

@@ -1,9 +1,10 @@
 /* css for all campuses view */
-.root-container{
+.root-container {
     margin: 0;
     padding: 0;
 }
-.root-container h1{
+
+.root-container h1 {
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,62 +12,82 @@
     align-items: center;
 }
 
-.a-inside-root-container{
-    margin-left:700px;
-    display:inline-block;
+.a-inside-root-container {
+    margin-left: 700px;
+    display: inline-block;
     justify-content: center;
     align-items: center;
 }
 
-.subContainer{
-    float:left;
-    width:48%;
+.subContainer {
+    float: left;
+    width: 48%;
     margin-left: 20px;
     margin-bottom: 10px;
     background-color: antiquewhite;
     border: 1px solid black;
 }
 
-.subContainer img{
-    width:100%;
-    height:atuo;
+.subContainer img {
+    width: 100%;
+    height: atuo;
 }
 
-.subContainer div{
-    width:50%;
-    float:left;
+.subContainer div {
+    width: 50%;
+    float: left;
 }
 
-.divblock{
-    height:100px;
+.divblock {
+    height: 100px;
 }
-.divblock a{
-    display:flex;
+
+.divblock a {
+    display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-size:26px;
+    font-size: 26px;
 }
 
-.divblock button{
-    float:right;
+.divblock button {
+    float: right;
     width: 50px;
     height: 30px;
-    font-size:20px;
-    background-color:white;
+    font-size: 20px;
+    background-color: white;
     color: black;
 }
 
 /* css for single campus view */
-.single-view-container{
+.single-view-container {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
-.single-view-container h1{
+.single-view-container h1 {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.move-to-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+.style-display-enrolled-student{
+    float:left;
+    margin-left:65px;
+}
+.style-display-enrolled-student a{
+    text-decoration: none;
+}
+
+
+

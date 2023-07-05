@@ -1,8 +1,8 @@
-import { useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import {deleteCampusThunk} from "../redux/campuses/campuses.action"
+import { deleteCampusThunk } from "../redux/campuses/campuses.action"
 import { updateStudentThunk, fetchAllStudentsThunk } from "../redux/students/students.action";
-import {useState} from "react";
+import { useState } from "react";
 import "../pages/campusesPages/index.css"
 
 const DisplaySingleCampus = () => {
@@ -16,18 +16,18 @@ const DisplaySingleCampus = () => {
     const dispatch = useDispatch();
 
     // Initializes the state of allStudents for drop-down menu selection if allStudents has not been initialized yet.    
-    if(allStudents.length === 0){
+    if (allStudents.length === 0) {
         dispatch(fetchAllStudentsThunk());
     };
 
     //delete the campus from database based on the campus id
-    const deleteCampus = (id) =>{
+    const deleteCampus = (id) => {
         dispatch(deleteCampusThunk(id))
     };
 
     // update the campusid of target student to the id of current campus
-    const AddStudent = () =>{
-        const targetStudent= {
+    const AddStudent = () => {
+        const targetStudent = {
             id: selecetedStudent,
             campusId: Campus[0].id
         }
@@ -35,8 +35,8 @@ const DisplaySingleCampus = () => {
         window.location.reload(false);
     };
 
-    const removeStudent = (targetId) =>{
-        const targetStudent= {
+    const removeStudent = (targetId) => {
+        const targetStudent = {
             id: targetId,
             campusId: null
         }
@@ -44,42 +44,52 @@ const DisplaySingleCampus = () => {
         window.location.reload(false);
     };
     return (
-        <div className="single-view-container">
-            <h1>{Campus[0].name}</h1>
+        <div>
+            <div className="single-view-container">
+                <h1>{Campus[0].name}</h1>
 
-            <div><img src={Campus[0].imageUrl}/></div>
-            {/*delete feature that will remove the current campus from database*/}
-            <Link to = "/allCampuses" ><button onClick = {() =>deleteCampus(Campus[0].id)}>X</button></Link>
-            {/* edit feature that will edit the information of current campus */}
-            <Link to = "/editCampus" state = {{campID: Campus[0].id}}><button>Edit</button></Link>
-            {/* displays the information of current campus */}
-            <h2>{Campus[0].address}</h2>
-            <h3>{Campus[0].description}</h3>
-            {/* displays a drop-down menu to select which student to add to the current campus.*/}
-            <div>
-                <select value={selecetedStudent} onChange={(e) => setSelecetedStudent(e.target.value)}>
-                    <option value = {""}>Select student</option>
-                    {allStudents.map(data=>{
-                        return (<option key={data.id} value={data.id}>{data.firstName} {data.lastName}</option>)
-                    })};
-                </select><br/>
-                <button onClick = {AddStudent}>Add</button>
+                <img className="move-to-center " src={Campus[0].imageUrl} />
+                <div>
+                    {/*delete feature that will remove the current campus from database*/}
+                    <Link to="/allCampuses" ><button onClick={() => deleteCampus(Campus[0].id)}>X</button></Link>
+                    {/* edit feature that will edit the information of current campus */}
+                    <Link to="/editCampus" state={{ campID: Campus[0].id }}><button>Edit</button></Link>
+                </div>
+                {/* displays the information of current campus */}
+                <h2>Address:</h2>
+                <h2>{Campus[0].address}</h2>
+                <h2>Description:</h2>
+                <h3>{Campus[0].description}</h3>
+                {/* displays a drop-down menu to select which student to add to the current campus.*/}
+                <div>
+                    <select value={selecetedStudent} onChange={(e) => setSelecetedStudent(e.target.value)}>
+                        <option value={""}>Select student</option>
+                        {allStudents.map(data => {
+                            return (<option key={data.id} value={data.id}>{data.firstName} {data.lastName}</option>)
+                        })};
+                    </select><br />
+                    <button onClick={AddStudent}>Add</button>
+                </div>
             </div>
-            {/* displays the students that are enrolled in current campus, dispalys a message if no students are shown */}
-            {Campus[0].students.length!==0?
-            (Campus[0].students.map(data => {
-                return (
-                    <div key={data.id}>
-                        <img src={data.imageUrl} />
-                        <Link to="/singleStudent" state={{ studentId: data.id }}>
-                            {data.firstName} {data.lastName}
-                        </Link>
-                        <button onClick = {() => removeStudent(data.id)}>Remove</button>
-                    </div>
-                )
-            })):
-            (<h3>No students enrolled in this campus</h3>)
-            }
+            <div>
+                {/* displays the students that are enrolled in current campus, dispalys a message if no students are shown */}
+                {Campus[0].students.length !== 0 ?
+                    (Campus[0].students.map(data => {
+                        return (
+                            <div className="style-display-enrolled-student" key={data.id}>
+                                <img src={data.imageUrl} />
+                                <div>
+                                    <Link to="/singleStudent" state={{ studentId: data.id }}>
+                                        {data.firstName} {data.lastName}
+                                    </Link>
+                                    <button onClick={() => removeStudent(data.id)}>Remove</button>
+                                </div>
+                            </div>
+                        )
+                    })) :
+                    (<h3>No students enrolled in this campus</h3>)
+                }
+            </div>
         </div>
     )
 }

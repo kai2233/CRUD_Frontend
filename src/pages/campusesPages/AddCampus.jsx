@@ -22,17 +22,19 @@ const AddCampus = () => {
     };
     const newCampus = useSelector((state) => state.campuses.newCampus);
     return (
-        <div>
+        <div className="edit-campus-page-container">
             <h1>Add Campus Form</h1>
             <form onSubmit={addNewCampus}>
                 <label>Name </label>
-                <input type="text" required value={name} placeholder="name..." onChange={(e) => setName(e.target.value)}/><br/>
+                <input type="text" required placeholder="name..." onChange={(e) => setName(e.target.value)}/>
                 <label>Address </label>
-                <input type="text" required value={address} placeholder="address..."onChange={(e) => setAddress(e.target.value)}/><br/>
+                <input type="text" required placeholder="address..."onChange={(e) => setAddress(e.target.value)}/>
                 <label>Image Url </label>
-                <input type="text"  placeholder="url..." onChange={(e) => setImageUrl(e.target.value)}/><br/>
+                <input type="text"  placeholder="url..." onChange={(e) => setImageUrl(e.target.value)}/>
                 <label>Description </label>
-                <input type="text" value={description} placeholder="description..." onChange={(e) => setDescription(e.target.value)}/><br/>
+                <div>
+                    <textarea className="form-description" type="text" placeholder="description..." onChange={(e) => setDescription(e.target.value)}/>
+                </div>
                 <input type="submit"/>
             </form>
             {newCampus.name===name?(<h1>Created Successfully</h1>):(null)}

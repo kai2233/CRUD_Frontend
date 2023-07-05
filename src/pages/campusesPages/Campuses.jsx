@@ -3,7 +3,7 @@ import {useSelector,useDispatch} from "react-redux";
 import {fetchAllCampusesThunk} from "../../redux/campuses/campuses.action";
 import { Link } from "react-router-dom";
 import DisplayCampuses from '../../components/DisplayCampuses';
-import "./campusesIndex.css"
+import "./index.css"
 const Campuses = () => {
   const allCampus = useSelector((state) => state.campuses.allCampuses);
   const dispatch = useDispatch();

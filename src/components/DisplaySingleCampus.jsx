@@ -2,8 +2,9 @@ import { useSelector, useDispatch} from "react-redux";
 import { Link } from "react-router-dom";
 import {deleteCampusThunk} from "../redux/campuses/campuses.action"
 import { updateStudentThunk, fetchAllStudentsThunk } from "../redux/students/students.action";
-
 import {useState} from "react";
+import "../pages/campusesPages/index.css"
+
 const DisplaySingleCampus = () => {
     // hook for storing target students to be added to the current campus.
     const [selecetedStudent, setSelecetedStudent] = useState();
@@ -43,14 +44,15 @@ const DisplaySingleCampus = () => {
         window.location.reload(false);
     };
     return (
-        <div >
-            <img src={Campus[0].imageUrl} />
+        <div className="single-view-container">
+            <h1>{Campus[0].name}</h1>
+
+            <div><img src={Campus[0].imageUrl}/></div>
             {/*delete feature that will remove the current campus from database*/}
             <Link to = "/allCampuses" ><button onClick = {() =>deleteCampus(Campus[0].id)}>X</button></Link>
             {/* edit feature that will edit the information of current campus */}
             <Link to = "/editCampus" state = {{campID: Campus[0].id}}><button>Edit</button></Link>
             {/* displays the information of current campus */}
-            <h1>{Campus[0].name}</h1>
             <h2>{Campus[0].address}</h2>
             <h3>{Campus[0].description}</h3>
             {/* displays a drop-down menu to select which student to add to the current campus.*/}

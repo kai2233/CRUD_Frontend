@@ -89,5 +89,38 @@
     text-decoration: none;
 }
 
+/* css for edit campus page */
+.edit-campus-page-container{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.edit-campus-page-container h1{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.edit-campus-page-container form{
+    text-align:unset;
+    margin:50px 600px 0 600px;
+    border: 1px solid black;
+}
+
+.edit-campus-page-container form input{
+    display: block;
+    margin: 0 auto;
+    width:300px;
+}
+
+.form-description{
+    text-align: left;
+    height:200px;
+    width:300px;
+}
+
+
+
 
 

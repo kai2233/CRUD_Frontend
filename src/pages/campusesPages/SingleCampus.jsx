@@ -19,7 +19,7 @@ const SingleCampus = () => {
     }, []);
     return(
         <div>
-            <h1>Hi this single Campus page</h1>
+            <h1>Single Campus</h1>
             {/* {Campus.length!==0?(<DisplaySingleCampus Campus={Campus}/>):(<h2> unchaught error</h2>)} */}
             {Campus.length!==0?(<DisplaySingleCampus />):(<h2> unchaught error</h2>)}
         </div>

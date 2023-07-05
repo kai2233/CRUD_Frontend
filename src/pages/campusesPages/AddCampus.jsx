@@ -23,7 +23,7 @@ const AddCampus = () => {
     const newCampus = useSelector((state) => state.campuses.newCampus);
     return (
         <div>
-            <h1>Hi! this is Add Campus page</h1>
+            <h1>Add Campus Form</h1>
             <form onSubmit={addNewCampus}>
                 <label>Name </label>
                 <input type="text" required value={name} placeholder="name..." onChange={(e) => setName(e.target.value)}/><br/>

@@ -27,7 +27,7 @@ const EditCampus = () => {
     // const targetCampus = useSelector((state) => state.campuses.updatedCampus);
     return (
         <div>
-            <h1>Hi! this is Edit Campus page</h1>
+            <h1>Edit Campus Form</h1>
             <form onSubmit={AlterCampus}>
                 <label>Name </label>
                 <input type="text"   placeholder="name..." onChange={(e) => setName(e.target.value)}/><br/>

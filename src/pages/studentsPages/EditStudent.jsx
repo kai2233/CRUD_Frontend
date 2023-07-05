@@ -29,7 +29,7 @@ const EditStudent = () => {
     // const targetStudent = useSelector((state) => state.students.updatedStudent);
     return (
         <div>
-            <h1>Hi! this is edit Student page</h1>
+            <h1>Edit Student Form</h1>
             <form onSubmit = {AlterStudent}>
                 <label>First Name</label>
                 <input type="text"  placeholder = "First Name..." onChange={(e) => setFirstName(e.target.value)}/><br/>

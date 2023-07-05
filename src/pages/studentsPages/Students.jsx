@@ -14,7 +14,7 @@ const Students = () => {
 
   return (
     <div>
-      <h1>Hi! this is students page</h1>
+      <h1>All Students</h1>
       <Link to = "/addStudent"><button>click to add students</button></Link>
       {allStudents.length!==0?(<DisplayStudents/>):(<h3>No students found</h3>)}
     </div>

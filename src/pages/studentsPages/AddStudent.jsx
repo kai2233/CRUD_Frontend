@@ -25,7 +25,7 @@ const AddStudent = () => {
 
     return (
         <div>
-            <h1>Hi! this is Add Student page</h1>
+            <h1>Add Student Form</h1>
             <form onSubmit = {addNewStudent}>
                 <label>First Name</label>
                 <input type="text" placeholder = "First Name..." required value={firstName} onChange={(e) => setFirstName(e.target.value)}/><br/>

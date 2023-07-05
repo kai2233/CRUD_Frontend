@@ -14,7 +14,7 @@ const SingleStudent = () => {
     }, []);
     return (
         <div>
-            <h1>Hi this is Single Student page</h1>
+            <h1>Student Profile</h1>
             {student.length!== 0? (<DisplaySingleStudent/>) : (<h2>unchaught error</h2>)}
         </div>
     )

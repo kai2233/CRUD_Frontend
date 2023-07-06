@@ -1,0 +1,39 @@
+/* css for all students view */
+.all-student-view-container {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.all-student-view-container h1 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-all-students {
+    float:left;
+    margin-left:65px;
+}
+
+.display-all-students a {
+    text-decoration: none;
+    margin-right:10px;
+}
+
+/* css for single student view */
+.single-student-view {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.single-student-view h1 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

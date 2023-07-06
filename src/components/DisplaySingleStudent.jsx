@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { deleteStudentThunk, updateStudentThunk } from "../redux/students/students.action";
 import { fetchAllCampusesThunk } from "../redux/campuses/campuses.action";
 import {useState, useEffect} from "react";
+import "../pages/studentsPages/index.css";
+
 const DisplaySingleStudent = () => {
     const student = useSelector((state) => state.students.singleStudent);
     const allCampuses = useSelector((state) => state.campuses.allCampuses);
@@ -31,9 +33,11 @@ const DisplaySingleStudent = () => {
         <div>
             <img src= {student[0].imageUrl} alt={"error"}/>
             {/* delete feature that will remove the student from the database */}
+            <div>
             <Link to = "/allStudents" ><button onClick = {()=>deleteStudent(student[0].id)}>X</button></Link>
             {/* edit feature that can able the user to alter student's information */}
             <Link to = "/editStudent" state ={{studentId:student[0].id}}><button>Edit</button></Link>
+            </div>
             {/* display student information */}
             <h1>Name: {student[0].firstName} {student[0].lastName}</h1>
             <h2>Email: {student[0].email}</h2>

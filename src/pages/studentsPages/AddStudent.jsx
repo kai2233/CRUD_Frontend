@@ -24,17 +24,17 @@ const AddStudent = () => {
     const newStudent = useSelector((state) => state.students.newStudent);
 
     return (
-        <div>
+        <div className="student-page-container">
             <h1>Add Student Form</h1>
             <form onSubmit = {addNewStudent}>
                 <label>First Name</label>
-                <input type="text" placeholder = "First Name..." required value={firstName} onChange={(e) => setFirstName(e.target.value)}/><br/>
+                <input type="text" placeholder = "First Name..." required value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
                 <label>Last Name</label>
-                <input type="text" placeholder = "Last Name..." required value={lastName} onChange={(e) => setLastName(e.target.value)}/><br/>
+                <input type="text" placeholder = "Last Name..." required value={lastName} onChange={(e) => setLastName(e.target.value)}/>
                 <label>Email</label>
-                <input type="text" placeholder = "Email..." required value={email} onChange={(e) => setEmail(e.target.value)}/><br/>
+                <input type="text" placeholder = "Email..." required value={email} onChange={(e) => setEmail(e.target.value)}/>
                 <label>GPA</label>
-                <input type="number" min="0" max="4" step = "0.01" placeholder = "GPA" onChange={(e) => setGpa(e.target.value)}/><br/>
+                <input type="number" min="0" max="4" step = "0.01" placeholder = "GPA" onChange={(e) => setGpa(e.target.value)}/>
                 <label>Image</label>
                 <input type="text" placeholder = "Image Url..." onChange={(e) => setImageUrl(e.target.value)}/><br/>
                 <input type="submit" value="Submit"/>

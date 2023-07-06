@@ -13,7 +13,7 @@ const SingleStudent = () => {
         dispatch(fetchSingleStudentThunk(studentId));
     }, []);
     return (
-        <div>
+        <div className="single-student-view ">
             <h1>Student Profile</h1>
             {student.length!== 0? (<DisplaySingleStudent/>) : (<h2>unchaught error</h2>)}
         </div>

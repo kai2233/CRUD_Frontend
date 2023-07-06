@@ -14,7 +14,7 @@ const Students = () => {
   }, []);
 
   return (
-    <div className="all-student-view-container">
+    <div className="format-students-view">
       <h1>All Students</h1>
       <Link to = "/addStudent"><button>click to add students</button></Link>
       {allStudents.length!==0?(<DisplayStudents/>):(<h3>No students found</h3>)}

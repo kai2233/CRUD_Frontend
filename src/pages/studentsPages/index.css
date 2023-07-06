@@ -1,11 +1,11 @@
 /* css for all students view */
-.all-student-view-container {
+.format-students-view {
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-.all-student-view-container h1 {
+.format-students-view h1 {
     margin: 0;
     padding: 0;
     display: flex;
@@ -36,4 +36,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* css for edit & enroll student form */
+.student-page-container{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.student-page-container h1{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.student-page-container form{
+    text-align:unset;
+    margin:50px 600px 0 600px;
+    border: 1px solid black;
+    height:300px;
+}
+
+.student-page-container form input{
+    display: block;
+    margin: 0 auto;
+    width:300px;
 }

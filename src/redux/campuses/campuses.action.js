@@ -40,7 +40,7 @@ export const fetchAllCampusesThunk = () => {
     return async (dispatch) => {
       try {
         console.log("fetchAllCampusesThunk started");
-        const result = await axios.get("http://localhost:8080/api/campuses");
+        const result = await axios.get("https://crud-backend-fyotv9bz1-kai2233.vercel.app/api/campuses");
         console.log("FETCHALLCAMPUSESTHUNK COMPLETED")
         dispatch(fetchAllCampuses(result.data));
       } catch (err) {
@@ -53,7 +53,7 @@ export const fetchSingleCampusThunk = (id) => {
   return async (dispatch) => {
     try {
       console.log("fetchSingleCampusThunk started");
-      const result = await axios.get("http://localhost:8080/api/campuses/findCampus/"+id);
+      const result = await axios.get("https://crud-backend-fyotv9bz1-kai2233.vercel.app/api/campuses/findCampus/"+id);
       console.log(result)
       console.log("fetchSingleCampusThunk COMPLETED")
       dispatch(fetchSingleCampuses(result.data));
@@ -67,7 +67,7 @@ export const addNewCampusThunk = (newCampus) => {
   return async (dispatch) => {
     try {
       console.log("addNewCampusThunk started");
-      const result = await axios.post("http://localhost:8080/api/campuses/addCampus", newCampus);
+      const result = await axios.post("https://crud-backend-fyotv9bz1-kai2233.vercel.app/api/campuses/addCampus", newCampus);
       console.log(result)
       console.log("addNewCampusThunk COMPLETED")
       dispatch(addNewCampus(result.data));
@@ -81,7 +81,7 @@ export const deleteCampusThunk = (ID) => {
   return async (dispatch) => {
     try {
       console.log("deleteCampusThunk started");
-      const result = await axios.delete("http://localhost:8080/api/campuses/deleteCampus/"+ID);
+      const result = await axios.delete("https://crud-backend-fyotv9bz1-kai2233.vercel.app/api/campuses/deleteCampus/"+ID);
       console.log(result)
       console.log("deleteCampusThunk COMPLETED")
       dispatch(deleteCampus(result.data));
@@ -95,7 +95,7 @@ export const updateCampusThunk = (updatedCampus) => {
   return async (dispatch) => {
     try {
       console.log("updateCampusThunk started");
-      const result = await axios.put("http://localhost:8080/api/campuses/updateCampus",updatedCampus);
+      const result = await axios.put("https://crud-backend-fyotv9bz1-kai2233.vercel.app/api/campuses/updateCampus",updatedCampus);
       console.log(result)
       console.log("updateCampusThunk COMPLETED")
       dispatch(updateCampus(result.data));
